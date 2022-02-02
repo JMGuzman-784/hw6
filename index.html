@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
+    <title>Weather Dashboard</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+</head>
+
+<body>
+    <header class="">
+        <h1>Weather Dashboard</h1>
+        <p>Damn its cold today bro.</p>
+    </header>
+
+        <div class="searchAndResults">
+            <div class="leftColumn">
+                
+                <!-- search -->
+                <form id="searchForm" class="searchFormBox">
+                    <input id="searchInput" type="text" placeholder="Input City Here...">
+                    <button type="submit" class="">Search</button>
+                </form>
+                <div id="searchHistory" class="searchHist"></div>
+            </div>
+        
+            <section id="allWeatherInfo" class="allWeatherInfo">
+                <div id="currentWeather" class="currWeather">Checkout today's Temp and a future 5-Day forecast</div>
+                <!-- 5 day forecast -->
+                
+                <div id="fiveDayWeather" class="fiveDayWeather"></div>
+            </section>
+
+        </div>
+        
+      </div>
+
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
