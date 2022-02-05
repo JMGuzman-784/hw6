@@ -3,7 +3,7 @@ const searchCities = [];
 
 // functions
 function handleCoords(searchCity) {
-    const fetchUrl = `http://api.openweathermap.org/data/2.5/weather?q=${searchCity}&appid=4b9f7dc3f8536150bc0eb915e8e4a81b`;
+    const fetchUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&appid=4b9f7dc3f8536150bc0eb915e8e4a81b`;
 
     fetch(fetchUrl)
         .then(function (response) {
@@ -39,7 +39,7 @@ function handleCurrentWeather(coordinates, city) {
 }
 
 function displayCurrentWeather(currentCityData, cityName) {
-    let weatherIcon = `http://openweathermap.org/img/wn/${currentCityData.weather[0].icon}.png`;
+    let weatherIcon = `https://openweathermap.org/img/wn/${currentCityData.weather[0].icon}.png`;
     // todo: add Wind, humidity, UV index DONT FORGET UNITS
     // create dynamic bg for uv index by adding class based on value of uv
     let uvClass = "low";
@@ -67,7 +67,7 @@ function displayFiveDayWeather(fiveDayCityData) {
     document.querySelector("#fiveDayWeather").innerHTML = "";
 
     cityData.forEach((day) => {
-        let weatherIcon = `http://openweathermap.org/img/wn/${day.weather[0].icon}.png`;
+        let weatherIcon = `https://openweathermap.org/img/wn/${day.weather[0].icon}.png`;
         // todo: temp, wind, humidity DONT FORGET UNITS ()
        
         document.querySelector("#fiveDayWeather").innerHTML += `<div class="col-sm m-1 p-2 card"><div class="font-weight-bold">${moment.unix(day.dt).format("MMM Do YY")}</div> <div><img src="${weatherIcon}"></div><div>Temp: ${day.temp.day} \xB0F</div><div class="">Wind: ${day.wind_speed} MPH</div><div class="">Humidity: ${day.humidity} %</div></div>`;
