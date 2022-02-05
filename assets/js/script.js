@@ -50,12 +50,14 @@ function displayCurrentWeather(currentCityData, cityName) {
         uvClass = "high";
     }
     document.querySelector("#fiveDayTitle").innerHTML = "5-Day Forecast:";
-    document.querySelector("#currentWeather").innerHTML = `<div class="border border-dark pb "
+    document.querySelector("#currentWeather").innerHTML = `<div class="border border-dark pb fw-bold"
     style="
     padding: 5px;
     align-items: center;
-    text-align: center;"
-    ><h2>${cityName} ${moment.unix(currentCityData.dt).format("MMM Do YY")} <img src="${weatherIcon}"></h2> <div>Temp: ${currentCityData.temp} \xB0F</div><div>Wind Speed: ${currentCityData.wind_speed} MPH</div><div>Humidity: ${currentCityData.humidity} %</div><div class="${uvClass}">UV Index: ${currentCityData.uvi}</div></div>`;
+    text-align: center;
+    border-radius: 1rem;
+    background-color: gainsboro;"
+    ><h2 style="text-shadow: 3px 2px rgba(255, 255, 255);">${cityName} ${moment.unix(currentCityData.dt).format("MMM Do YY")} <img src="${weatherIcon}"></h2> <div>Temp: ${currentCityData.temp} \xB0F</div><div>Wind Speed: ${currentCityData.wind_speed} MPH</div><div>Humidity: ${currentCityData.humidity} %</div><div class="${uvClass}">UV Index: ${currentCityData.uvi}</div></div>`;
     
     
 }
@@ -77,12 +79,12 @@ function handleFormSubmit(event) {
     document.querySelector("#searchHistory").innerHTML = "";
     event.preventDefault();
     const city = document.querySelector("#searchInput").value.trim();
-    searchCities.push(city.toLowerCase());
+    searchCities.push(city.toUpperCase());
     const filteredCities = searchCities.filter((city, index) => {
         return searchCities.indexOf(city) === index;
     })
     filteredCities.forEach((city) => {
-        document.querySelector("#searchHistory").innerHTML += `<button class="w-100 d-block my-2" data-city="${city}">${city}</button>`;
+        document.querySelector("#searchHistory").innerHTML += `<button class="w-100 d-block my-2 btn btn-outline-darks" data-city="${city}">${city}</button>`;
     });
     
     handleCoords(city);

@@ -1,8 +1,18 @@
+* {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    background-color: floralwhite;
+}
+
 header {
     color: azure;
     text-shadow: 3px 3px rgba(128, 128, 128, 0.699);
-    -webkit-animation: bgcolor 4s infinite;
-    animation: bgcolor 4s infinite;
+    -webkit-animation: bgcolor 7s infinite;
+    animation: bgcolor 7s infinite;
     -webkit-animation-direction: normal;
     animation-direction: normal;
 }
@@ -12,24 +22,40 @@ header {
         background-color: #060073;
     }
 
-    60% {
+    30% {
         background-color: #0059ff;
     }
 
-    100% {
+    60% {
         background-color: #00a0d1;
+    }
+
+    80% {
+        background-color: #f0f1f2;
+    }
+
+    100% {
+        background-color: #060073;
+
     }
 }
 
 .container-leftside {
+    background-color: floralwhite;
     margin-right: auto;
     margin-left: auto;
+
 }
 
 .leftside-spacing {
-    margin-left: 10px;
-    margin-right: 10px;
+   background-color: #adb5bd;
+   border-radius: 1rem;
+    margin-top: 12px;
+    
+    margin-bottom: auto;
+    padding: 1rem;
 }
+
 
 .row-main {
     display: flex;
@@ -55,74 +81,19 @@ header {
     background-color: lightgreen;
 }
 
-
-/* body {
-    background-color: rgba(85, 85, 85, 0.212);
-    margin: 0px;
+.searchBtnTransition {
+    transition: all ease-in-out 3s;
+    -webkit-transition: color 300ms;
+    transition: color 300ms;
+    position: relative;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-header {
-    align-items: center;
-    background: rgb(6,0,115);
-    background: linear-gradient(90deg, rgba(6,0,115,1) 0%, rgba(9,9,121,1) 29%, rgba(0,212,255,1) 100%);
-    color: whitesmoke;
-    text-align: center;
-    padding: .5rem;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Aldrich', sans-serif;
-}
-
-.allWeatherInfo {
-    background-color: floralwhite;
-    padding: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.fiveDayWeather {
-    justify-content: center;
-    text-align: center;
-    display: flex;
-    margin: auto;
-    flex-wrap: wrap;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-gap: 20px;
-    padding: inherit;
-}   
-
-.searchAndResults {
-    display: flex;
-}
-
-.searchFormBox {
-    align-items: center;
-    text-align: center;
-    padding: 1rem;
-}
-
-.searchBtn:hover {
-    color: #fff;
-    box-shadow: 0 2px 1px rgba(0,0,0,.5);
-}
-
-.searchBtn {
-  -webkit-transition: color 300ms;
-  transition: color 300ms;
-  position: relative;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -moz-osx-font-smoothing: grayscale;
-  cursor: pointer;
-}
-
-.searchBtn:before {
+.searchBtnTransition:before {
     content: "";
     position: absolute;
     z-index: -1;
@@ -130,7 +101,8 @@ header {
     bottom: 0;
     left: 0;
     right: 0;
-    background: #41b3ff;
+    background: rgb(0, 0, 0);
+    border-color: #343a40;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
     -webkit-transform-origin: 50%;
@@ -141,41 +113,41 @@ header {
     transition: 300ms ease-out;
 }
 
-.searchBtn:hover:before {
+.searchBtnTransition:hover:before {
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
 }
 
-.leftColumn {
-    
-    background-color: rgb(177, 177, 177);
+.searchBtnTransition:hover {
+    color: white;
+    transition: ease-in-out .5s;
 }
 
-.searchHist {
-    margin: auto;  
-    background-color: rgba(235, 235, 235, 0);
-    align-items: center;
-    text-align: center;
-    padding: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    width: min-content;
+.card {
+    background-clip: border-box;
+    border: 5px solid rgba(0,0,0,.125);
+    border-radius: 1rem;
+    background-color: gainsboro;
 }
 
-.currWeather {
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 1rem;
+.btn-outline-darks {
+    color: #ffffff;
+    background-image: none;
+    border-color: #343a40;
 }
 
-.bgWallpaper {
-    background-image: url('./assets/images/bgw.jpg');
-    background-color: #cccccc00;
-  height: 500px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+.btn-outline-darks {
+    /* Set up the hover */
+    /* If you aren't using autoprefix, remember to prefix the gradient for other browsers */
+    background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)), linear-gradient(rgb(155, 155, 155), rgb(155, 155, 155));
+    background-size: 0 5px, auto;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    transition: all .2s ease-out;
 }
-*/
+  
+.btn-outline-darks:hover {
+    /* The following line makes the underline only as wide as the text */
+    /* background-size: calc(100% - 2em) 5px, auto; */
+    background-size: 100% 5px, auto;
+}
